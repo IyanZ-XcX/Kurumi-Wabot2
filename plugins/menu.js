@@ -36,26 +36,26 @@ let tags = {
 
 const defaultMenu = {
   before: `
-╭─❏ *Info*
-├▸ *Name:* %name
-├▸ *Premium:* 404
-├▸ *Limit:* %limit
-├▸ *Role:* %role
-├▸ *Xp:* %exp / %maxexp
-├▸ *Total Xp:* %totalexp
-├▸ Tanggal: *%week %weton, %date*
-├▸ Tanggal Islam: *%dateIslamic*
-├▸ Waktu: *%time*
-├▸ *Name:* %me
-├▸ *Mode:* ${global.opts['self'] ? 'Private' : 'Publik'}
-├▸ *Battery:* ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 pengisian' : ''}` : 'tidak diketahui'}
-├▸ *Uptime:* %uptime (%muptime)
-├▸ *Database:* %rtotalreg dari %totalreg
-╰❏
+╭─〘 *Info* 〙
+┆▸ *Name:* %name
+┆▸ *Premium:* 404
+┆▸ *Limit:* %limit
+┆▸ *Role:* %role
+┆▸ *Xp:* %exp / %maxexp
+┆▸ *Total Xp:* %totalexp
+┆▸ Tanggal: *%week %weton, %date*
+┆▸ Tanggal Islam: *%dateIslamic*
+┆▸ Waktu: *%time*
+┆▸ *Name:* %me
+┆▸ *Mode:* ${global.opts['self'] ? 'Private' : 'Publik'}
+┆▸ *Battery:* ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 pengisian' : ''}` : 'tidak diketahui'}
+┆▸ *Uptime:* %uptime (%muptime)
+┆▸ *Database:* %rtotalreg dari %totalreg
+╰─────
 %readmore`.trimStart(),
-  header: '╭─❏ %category',
-  body: '├⪼ %cmd %islimit %isPremium',
-  footer: '╰❏\n',
+  header: '╭─〘 %category 〙',
+  body: '┆✿ %cmd %islimit %isPremium',
+  footer: '╰─────\n',
   after: `
 *%npmname@^%version*
 ${'```%npmdesc```'}
