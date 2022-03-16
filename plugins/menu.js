@@ -5,40 +5,37 @@ let path = require('path')
 let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 let tags = {
-      'main': 'Main',
-      'info': 'INGFO',
-      'rpg': 'RPG',
-      'game': 'GAME MENU',
-      'xp': 'EXP & LIMIT',
-      'database': 'DATABASE MENU',
-      'sticker': 'STICKER MENU',
-      'maker': 'MAKER MENU',
-      'spammer': 'SPAM MENU',
-      'audio': 'AUDIO MENU',
-      'kerang': 'KERANG AJAIB',
-      'cek': 'CEK MENU',
-      'fun': 'FUN MENU',
-      'quotes': 'QUOTES MENU',
-      'islamic': 'ISLAM MENU',
-      'anonymous': 'ANONYMOUS CHAT',
-      'admin': 'ADMIN MENU',
-      'group': 'GROUP MENU',
-      'internet': 'INTERNET',
-      'foto': 'IMAGE MENU',
-      'nime': 'ANIME MENU',
-      'nulis': 'MAGER NULIS',
-      'downloader': 'DOWNLOADER MENU',
-      'tools': 'TOOLS MENU',
-      'owner': 'OWNER MENU',
-      'jadibot': 'JADI BOT',
-      'host': 'HOST',
-      'advanced': 'EVAL',
-      '': 'NO CATEGORY',
+    'main': '👑Utama👑',
+    'game': '👑Game👑',
+    'rpg': '👑Rpg👑',
+    'jadian': '👑Jadian👑',
+    'xp': '👑Exp & Limit👑',
+    'sticker': '👑Stiker👑',
+    'kerang': '👑Kerang Ajaib👑',
+    'ep': '👑Ephoto👑',
+    'ph': '👑Photooxy👑',
+    'quotes': '👑Quotes👑',
+    'admin': `👑Admin ${global.opts['restrict'] ? '' : '(Dinonaktifkan)'}👑`,
+    'group': '👑Grup👑',
+    'premium': '👑Premium👑',
+    'internet': '👑Internet👑',
+    'anonymous': '👑Anonymous Chat👑',
+    'nulis': '👑MagerNulis & Logo👑',
+    'downloader': '👑Downloader👑',
+    'tools': '👑Tools👑',
+    'fun': '👑Fun👑',
+    'database': '👑Database👑',
+    'vote': '👑Voting👑',
+    'absen': '👑Absen👑',
+    'quran': '👑Al Qur\'an👑',
+    'audio': '👑Pengubah Suara👑',
+    'jadibot': '👑Jadi Bot👑',
+    'info': '👑Info👑',
+    '': '👑Tanpa Kategori👑',
   }
 
 const defaultMenu = {
   before: `
-Hi Kak ${name}, ${ucapan()}
 ╭─❏ *Info*
 ├▸ *Name:* %name
 ├▸ *Premium:* 404
@@ -56,9 +53,9 @@ Hi Kak ${name}, ${ucapan()}
 ├▸ *Database:* %rtotalreg dari %totalreg
 ╰❏
 %readmore`.trimStart(),
-  header: '╭─〔 %category 〕',
-  body: '┆∘ %cmd %islimit %isPremium',
-  footer: '╰───\n',
+  header: '╭─❏ %category',
+  body: '├⪼ %cmd %islimit %isPremium',
+  footer: '╰❏\n',
   after: `
 *%npmname@^%version*
 ${'```%npmdesc```'}
@@ -165,8 +162,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3ButtonImg(m.chat, await (await fetch(image)).buffer(), ``
-, text.trim(), 'Owner Bot', `,owner`, 'Rules', '.rules', 'Donasi', '.donasi', m)
+    await conn.send3ButtonImg(m.chat, await (await fetch(image)).buffer(), `*Hi!, ${name} ${ucapan()}*\n*I'am ᴍɪᴋᴜ-ʙᴏᴛ*`
+, text.trim(), '👑 Owner Bot 👑', `,owner`, '📄 Rules 📄', '.rules', '🤑 Donasi 🤑', '.donasi', m)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
