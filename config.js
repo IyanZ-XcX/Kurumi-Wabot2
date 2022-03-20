@@ -16,8 +16,8 @@ gc1 = ''
 gc2 = ''
 gc3 = ''
 global.linkGC = ['https://chat.whatsapp.com/CcHAiR7gDJR0x8EakMsQ0k', ''] // ganti jadi group lu
-global.owner = ['6285742344873','6281212083267'] // Put your number here //owner eval
-global.kontak = ['6285742344873','6281212083267'] //Ketika ada yang ngetik #owner
+global.owner = ['6285742344873','6281244706456'] // Put your number here //owner eval
+global.kontak = ['6285742344873','6281244706456'] //Ketika ada yang ngetik #owner
 global.mods = ['0'] // Want some help?
 global.prems = [''] // Premium user has unlimited limit
 global.APIs = { // API Prefix
@@ -54,7 +54,7 @@ namaig = ''
 namagithub = 'GAK ADA :)'
 kasihcaption = `Nih kak`
 namakontak1 = 'IyanZ-XcX'
-namakontak2 = 'Hanzz-XcX'
+namakontak2 = 'Kimiko-XcX'
 
 //kasihcaption = `Nih Kak`
 
@@ -75,7 +75,7 @@ global.wait = '_*Tunggu Sebentar...*_'
 global.rpg = 'Fitur Rpg Dimatikan'
 global.nsfw = 'Fitur NSFW Dimatikan'
 global.eror = '_*Server Error*_'
-global.image = 'https://telegra.ph/file/4f2482fe66e677b358575.jpg'
+global.image = 'https://telegra.ph/file/2722847e6cbf1c2a090ad.jpg'
 
 global.fla = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&text='
 
