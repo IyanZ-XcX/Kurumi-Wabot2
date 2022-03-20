@@ -23,7 +23,7 @@ var seconds = Math.floor(seconds % 60);
 return `${pad(hours)}Jam ${pad(minutes)}Menit ${pad(seconds)}Detik`
 }
 runtime = process.uptime()
-					teks = `Miku-Wabot-5// \n\n${kyun(runtime)}`
+					teks = `ᴋᴜʀᴜᴍɪ ʙᴏᴛ ᴏꜰꜰɪᴄɪᴀʟ// \n\n${kyun(runtime)}`
 					run = `${kyun(runtime)}`
 					var itsme = `0@s.whatsapp.net`
 					var split = `teks`
@@ -40,7 +40,7 @@ runtime = process.uptime()
 					//m.reply(teks)
 conn.sendMessage(m.chat, `_*Lebih Baik Salam Bro*_`, 'conversation', {quoted: m, thumbnail: img2, contextInfo:{externalAdReply: {title: teks, body: `${run}`, sourceUrl: namagithub, thumbnail: img1}}})
 }
-handler.customPrefix = /^(P|p|Hallo|halo|Halo|hallo|hi|helo|hai|hi|Hai|Helo|Hello|oy)$/i
+handler.customPrefix = /^(P|p)$/i
 handler.command = new RegExp
 module.exports = handler
 function ucapan() {
