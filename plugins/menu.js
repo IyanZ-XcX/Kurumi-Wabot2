@@ -36,27 +36,35 @@ let tags = {
 
 const defaultMenu = {
   before: `
-╭─〘 *Info* 〙
+    *Info*
+╭──〘 *User Info* 〙
 ┆▸ *Name:* %name
 ┆▸ *Premium:* 404
 ┆▸ *Limit:* %limit
 ┆▸ *Role:* %role
 ┆▸ *Xp:* %exp / %maxexp
 ┆▸ *Total Xp:* %totalexp
+╰────
+╭──〘 *Today* 〙
 ┆▸ Tanggal: *%week %weton, %date*
 ┆▸ Tanggal Islam: *%dateIslamic*
 ┆▸ Waktu: *%time*
+╰────
+╭──〘 *Bot Info* 〙
 ┆▸ *Name:* %me
 ┆▸ *Mode:* ${global.opts['self'] ? 'Private' : 'Publik'}
 ┆▸ *Battery:* ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 pengisian' : ''}` : 'tidak diketahui'}
 ┆▸ *Uptime:* %uptime (%muptime)
 ┆▸ *Database:* %rtotalreg dari %totalreg
-╰─────
+╰────
 %readmore`.trimStart(),
-  header: '╭─〘 %category 〙',
+    header: '╭─〘 *%category* 〙',
   body: '┆✿ %cmd %islimit %isPremium',
-  footer: '╰─────\n',
+  footer: '╰───\n',
   after: `
+  *📌Note:*
+  • 👑 (Premium)
+  • 🏷 (Limit)
 *%npmname@^%version*
 ${'```%npmdesc```'}
 `,
@@ -135,8 +143,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => {
             return menu.help.map(help => {
               return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
-                .replace(/%islimit/g, menu.limit ? '(Limit)' : '')
-                .replace(/%isPremium/g, menu.premium ? '(Premium)' : '')
+                .replace(/%islimit/g, menu.limit ? '🏷' : '')
+                .replace(/%isPremium/g, menu.premium ? '👑' : '')
                 .trim()
             }).join('\n')
           }),
@@ -162,8 +170,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3ButtonImg(m.chat, await (await fetch(image)).buffer(), `*Hi!, ${name} ${ucapan()}*`
-, text.trim(), '👑 Owner Bot 👑', `,owner`, '📄 Rules 📄', '.rules', '🤑 Donasi 🤑', '.donasi', m)
+    await conn.send3ButtonImg(m.chat, await (await fetch(image)).buffer(), `*Hi!, ${name}\nIam ᴋᴜʀᴜᴍɪ ᴛᴏᴋɪꜱᴀᴋɪ*`
+, text.trim(), 'OWNER BOT', `,owner`, 'RULES BOT', '.rules', 'DONASI', '.donasi', m)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
